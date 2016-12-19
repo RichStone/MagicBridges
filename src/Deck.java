@@ -23,7 +23,7 @@ public class Deck
 	{
 		int count = 1;
 		for(Card card : currDeck) {
-			System.out.println((count++) + ". " + card.toString());
+			System.out.println((count++) + " - " + card.toString());
 		}
 	}
 	
@@ -35,6 +35,8 @@ public class Deck
 		for(int i = 0; i < copyDeck.size(); ) {
 			int cardNumber = rnd.nextInt(copyDeck.size());
 			newDeck.push(copyDeck.get(cardNumber));
+			copyDeck.remove(cardNumber);
 		}
+		currDeck = newDeck;
 	}
 }
