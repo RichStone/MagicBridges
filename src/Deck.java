@@ -8,7 +8,8 @@ public class Deck
 	private Stack<Card> currDeck = new Stack<Card>();
 	
 	//Initialize prototype deck
-	public void newDeck(){
+	public void newDeck()
+	{
 		for(Card.Suit suit : Card.Suit.values()){ 
 			for(Card.Rank rank : Card.Rank.values()) {
 				protoDeck.add(new Card(rank, suit));
@@ -19,10 +20,12 @@ public class Deck
 		}
 	}
 	
-	public void initializeActionCards() {
+	public void initializeActionCards() 
+	{
 		for(Card card : protoDeck) {
 			if(card.toString().startsWith("SEVEN")) {
-				
+				card = new ActionCard(card, "take two cards", 2);
+				System.out.println(((ActionCard) card).getDescription());
 				System.out.println(card);
 			}
 		}
@@ -36,7 +39,8 @@ public class Deck
 		}
 	}
 	
-	public void shuffle() {
+	public void shuffle() 
+	{
 		Random rnd = new Random();
 		ArrayList<Card> copyDeck = new ArrayList<Card>(protoDeck);
 		Stack<Card> newDeck = new Stack<Card>();
