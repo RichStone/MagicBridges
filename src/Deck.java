@@ -19,6 +19,15 @@ public class Deck
 		}
 	}
 	
+	public void initializeActionCards() {
+		for(Card card : protoDeck) {
+			if(card.toString().startsWith("SEVEN")) {
+				
+				System.out.println(card);
+			}
+		}
+	}
+	
 	public void printDeck() 
 	{
 		int count = 1;
